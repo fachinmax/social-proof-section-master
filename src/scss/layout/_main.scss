@@ -1,0 +1,36 @@
+@use '../abstracts/breakpoints';
+
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 45px;
+
+    @media (min-width: map-get(breakpoints.$screen-size, 'mobile')) {
+        & {
+            grid-template-columns: 380px 430px;
+            grid-template-rows: 1fr 270px;
+            text-align: left;
+            gap: 20px 140px;
+            padding: 80px;
+            margin: 0;
+    
+            & .reviews {
+                grid-column: span 2;
+                display: grid;
+                grid-auto-flow: column;
+                column-gap: 20px;
+            }
+
+            & .rates {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    & .rates {
+        margin-block: 10px;
+    }
+}

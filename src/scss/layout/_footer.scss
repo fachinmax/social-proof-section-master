@@ -1,0 +1,21 @@
+@use '../abstracts/colors';
+@use '../abstracts/typography';
+
+
+.attribution {
+    font-size: map-get(typography.$size, 'footer');
+    text-align: center;
+    
+    & dl {
+        display: flex;
+        justify-content: center;
+
+        & dd {
+            margin-inline: 5px;
+        }
+    }
+}
+
+.attribution a {
+    color: map-get(colors.$colors, 'text', 'blue');
+}

@@ -1,0 +1,60 @@
+@use '../abstracts/colors';
+@use '../abstracts/border-radius';
+@use '../abstracts/typography';
+@use '../abstracts/breakpoints';
+
+
+.reviews__card {
+    background-color: map-get(colors.$colors, 'background', 'dark-magenta');
+    border-radius: map-get(border-radius.$size-round, 'boxes');
+    margin-block: 15px;
+    color: map-get(colors.$colors, 'text', 'white');
+    font-size: map-get(typography.$size, 'paragraph');
+    padding: 20px;
+    text-align: left;
+    
+    & header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    & hgroup {
+        margin-left: 20px;
+    }
+
+    & img {
+        border-radius: map-get(border-radius.$size-round, 'photographies');
+        width: 40px;
+        margin-block: 20px;
+    }
+
+    & h3 {
+        font-weight: map-get(typography.$weights, 'bold');
+        margin-bottom: 5px;
+    }
+
+    & h4 {
+        font-weight: map-get(typography.$weights, 'regular');
+        color: map-get(colors.$colors, 'text', 'soft-pink');
+    }
+
+    & p {
+        font-weight: map-get(typography.$weights, 'normal');
+        line-height: 1.2rem;
+    }
+
+    @media (min-width: map-get(breakpoints.$screen-size, 'mobile')) {
+        &:nth-child(1) {
+            align-self: start;
+        }
+
+        &:nth-child(2) {
+            align-self: center;
+        }
+
+        &:nth-child(3) {
+            align-self: end;
+        }
+    }
+}

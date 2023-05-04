@@ -1,0 +1,28 @@
+@use '../abstracts/colors';
+@use '../abstracts/typography';
+@use '../abstracts/breakpoints';
+
+
+header h1 {
+    color: map-get(colors.$colors, 'text', 'very-dark-magenta');
+    width: 250px;
+    margin: 15px auto;
+
+    @media (min-width: map-get(breakpoints.$screen-size, 'mobile')) {
+        & {
+            margin-block-end: 10px;
+            margin: 15px 0;
+        }
+    }
+}
+
+header p {
+    font-size: map-get(typography.$size, 'paragraph');
+    color: map-get(colors.$colors, 'text', 'dark-grayish-magenta');
+    line-height: 1.5rem;
+}
+
+.rates__container h2 {
+    color: map-get(colors.$colors, 'text', 'dark-magenta');
+    font-size: map-get(typography.$size, 'paragraph');
+}

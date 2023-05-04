@@ -1,0 +1,47 @@
+@use '../abstracts/colors';
+@use '../abstracts/border-radius';
+@use '../abstracts/breakpoints';
+
+
+.rates__container {
+    background-color: map-get(colors.$colors, 'background', 'light-grayish-magenta');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: map-get(border-radius.$size-round, 'boxes');
+    padding: 10px;
+    margin-block: 15px;
+
+    @media (min-width: map-get(breakpoints.$screen-size, 'mobile')) {
+        & {
+            flex-direction: row;
+            padding-inline: 30px;
+        }
+        
+        &:nth-child(1) {
+            align-self: flex-start;
+        }
+
+        &:nth-child(2) {
+            align-self: center;
+        }
+
+        &:nth-child(3) {
+            align-self: flex-end;
+        }
+    }
+}
+
+.images {
+    display: flex;
+    width: 120px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    @media (min-width: map-get(breakpoints.$screen-size, 'mobile')) {
+        & {
+            margin-bottom: 0;
+            margin-inline-end: 20px;
+        }
+    }
+}
